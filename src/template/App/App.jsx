@@ -13,6 +13,7 @@ function App() {
   const [nonGame, setNonGame] = useState(true)
   const [levelTime, setLevelTime] = useState(0)
   const [cardFlips, setCardFlips] = useState(0)
+  const [cardMatchInfo, setCardMatchInfo] = useState(0)
   const [cardMatch, setCardMatch] = useState(0)
   const [isWinner, setIsWinner] = useState(false)
   const easyEndGame = useRef(true)
@@ -28,6 +29,7 @@ function App() {
               nonGame={nonGame}
               setNonGame={setNonGame}
               isWinner={isWinner}
+              setCardMatch={setCardMatch}
               setIsWinner={setIsWinner}
               setLevelTime={setLevelTime}
               easyEndGame={easyEndGame}
@@ -37,7 +39,7 @@ function App() {
             <Info
               isWinner={isWinner}
               cardFlips={cardFlips}
-              cardMatch={cardMatch}
+              cardMatchInfo={cardMatchInfo}
             />
           </div>
         </>
@@ -56,6 +58,8 @@ function App() {
           easyEndGame={easyEndGame}
           mediumEndGame={mediumEndGame}
           hardEndGame={hardEndGame}
+          cardMatchInfo={cardMatchInfo}
+          setCardMatchInfo={setCardMatchInfo}
         />
       )}
     </div>

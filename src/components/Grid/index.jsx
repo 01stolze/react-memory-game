@@ -12,12 +12,14 @@ export const Grid = ({
   levelTime,
   setCardFlips,
   setCardMatch,
+  setCardMatchInfo,
   setNonGame,
   cardMatch,
   setIsWinner,
   easyEndGame,
   mediumEndGame,
   hardEndGame,
+  cardMatchInfo,
 }) => {
   const first = useRef()
   const second = useRef()
@@ -63,6 +65,8 @@ export const Grid = ({
         second.current = card
         console.log('second', second.current)
         if (first.current.back == second.current.back) {
+          setCardMatchInfo((c) => c + 1)
+          console.log(cardMatchInfo)
           console.log('ACERTOU')
           console.log('statecards', stateCards)
           first.current = null
@@ -74,7 +78,6 @@ export const Grid = ({
             setNonGame,
             cardMatch,
             setIsWinner,
-            setCardMatch,
             easyEndGame,
             mediumEndGame,
             hardEndGame,
@@ -125,4 +128,6 @@ Grid.propTypes = {
   easyEndGame: P.any,
   mediumEndGame: P.any,
   hardEndGame: P.any,
+  setCardMatchInfo: P.func,
+  cardMatchInfo: P.number,
 }

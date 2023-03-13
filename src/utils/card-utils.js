@@ -35,12 +35,13 @@ export const levelChoose = (
   level,
   setLevelTime,
   setNonGame,
-  isWinner,
+  setCardMatch,
   levelEndGame,
 ) => {
   switch (level) {
     case 'easy': {
       console.log('Easy level selected!')
+      setCardMatch(0)
       setLevelTime(30)
       setNonGame(false)
       setTimeout(() => {
@@ -50,6 +51,7 @@ export const levelChoose = (
     }
     case 'medium': {
       console.log('Medium level selected!')
+      setCardMatch(0)
       setLevelTime(60)
       setNonGame(false)
       setTimeout(() => {
@@ -59,6 +61,7 @@ export const levelChoose = (
     }
     case 'hard': {
       console.log('HARD level selected!')
+      setCardMatch(0)
       setLevelTime(120)
       setNonGame(false)
       setTimeout(() => {
@@ -75,7 +78,6 @@ export const endGame = (
   setNonGame,
   cardMatch,
   setIsWinner,
-  setCardMatch,
   easyEndGame,
   mediumEndGame,
   hardEndGame,
@@ -85,7 +87,6 @@ export const endGame = (
       if (cardMatch == 3) {
         setTimeout(() => {
           setNonGame(true)
-          setCardMatch(0)
           easyEndGame.current = false
           setIsWinner(true)
         }, 900)
@@ -96,7 +97,6 @@ export const endGame = (
       if (cardMatch == 7) {
         setTimeout(() => {
           setNonGame(true)
-          setCardMatch(0)
           mediumEndGame.current = false
           setIsWinner(true)
         }, 900)
@@ -107,7 +107,6 @@ export const endGame = (
       if (cardMatch == 15) {
         setTimeout(() => {
           setNonGame(true)
-          setCardMatch(0)
           hardEndGame.current = false
           setIsWinner(true)
         }, 900)

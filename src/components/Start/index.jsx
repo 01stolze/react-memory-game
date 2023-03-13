@@ -6,7 +6,7 @@ import './styles.css'
 export const Start = ({
   setLevelTime,
   setNonGame,
-  isWinner,
+  setCardMatch,
   easyEndGame,
   mediumEndGame,
   hardEndGame,
@@ -32,7 +32,7 @@ export const Start = ({
                 'easy',
                 setLevelTime,
                 setNonGame,
-                isWinner,
+                setCardMatch,
                 easyEndGame,
               )
             }
@@ -45,7 +45,7 @@ export const Start = ({
                 'medium',
                 setLevelTime,
                 setNonGame,
-                isWinner,
+                setCardMatch,
                 mediumEndGame,
               )
             }
@@ -58,7 +58,7 @@ export const Start = ({
                 'hard',
                 setLevelTime,
                 setNonGame,
-                isWinner,
+                setCardMatch,
                 hardEndGame,
               )
             }
@@ -78,4 +78,5 @@ Start.propTypes = {
   easyEndGame: P.any,
   mediumEndGame: P.any,
   hardEndGame: P.any,
+  setCardMatch: P.func,
 }

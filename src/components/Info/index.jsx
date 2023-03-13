@@ -2,7 +2,7 @@ import P from 'prop-types'
 import { useState } from 'react'
 import './styles.css'
 
-export const Info = ({ isWinner, cardFlips, cardMatch }) => {
+export const Info = ({ isWinner, cardFlips, cardMatchInfo }) => {
   const [infoFlipped, setInfoFlipped] = useState(false)
   const infoContentClassesNames = ['info-content']
   infoFlipped && infoContentClassesNames.push('info-content--flipped')
@@ -22,7 +22,7 @@ export const Info = ({ isWinner, cardFlips, cardMatch }) => {
           <p>{isWinner ? 'Parabéns' : 'Que pena!!'}</p>
           -=-
           <p>Cartas giradas: {cardFlips} </p>
-          <p>Cartas que acertou: {cardMatch} </p>
+          <p>Cartas que acertou: {cardMatchInfo} </p>
           -=-
         </div>
       </div>
@@ -33,5 +33,5 @@ export const Info = ({ isWinner, cardFlips, cardMatch }) => {
 Info.propTypes = {
   isWinner: P.bool.isRequired,
   cardFlips: P.number,
-  cardMatch: P.number,
+  cardMatchInfo: P.number,
 }
