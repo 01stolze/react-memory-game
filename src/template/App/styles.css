@@ -1,0 +1,9 @@
+body {
+    background: rgba(51,51,51,255);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.lobby {
+    display: grid;
+    height: 100vh;
+}
