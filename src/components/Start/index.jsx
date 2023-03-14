@@ -10,6 +10,7 @@ export const Start = ({
   easyEndGame,
   mediumEndGame,
   hardEndGame,
+  setEndGame,
 }) => {
   const [flipped, setFlipped] = useState(false)
   const startContentClassesNames = ['start-content']
@@ -34,6 +35,7 @@ export const Start = ({
                 setNonGame,
                 setCardMatch,
                 easyEndGame,
+                setEndGame,
               )
             }
           >
@@ -47,6 +49,7 @@ export const Start = ({
                 setNonGame,
                 setCardMatch,
                 mediumEndGame,
+                setEndGame,
               )
             }
           >
@@ -60,6 +63,7 @@ export const Start = ({
                 setNonGame,
                 setCardMatch,
                 hardEndGame,
+                setEndGame,
               )
             }
           >
@@ -79,4 +83,5 @@ Start.propTypes = {
   mediumEndGame: P.any,
   hardEndGame: P.any,
   setCardMatch: P.func,
+  setEndGame: P.func,
 }

@@ -20,6 +20,7 @@ export const Grid = ({
   mediumEndGame,
   hardEndGame,
   cardMatchInfo,
+  setEndGame,
 }) => {
   const first = useRef()
   const second = useRef()
@@ -46,7 +47,11 @@ export const Grid = ({
     const newStateCards = stateCards.map((card) => {
       if (card.id != id) return card
 
-      if (card.flipped) return card
+      if (card.flipped) {
+        if (first.current || second.current) {
+          return card
+        }
+      }
 
       card.flipped = true
 
@@ -81,6 +86,7 @@ export const Grid = ({
             easyEndGame,
             mediumEndGame,
             hardEndGame,
+            setEndGame,
           )
         } else {
           console.log('ERROU')
@@ -130,4 +136,5 @@ Grid.propTypes = {
   hardEndGame: P.any,
   setCardMatchInfo: P.func,
   cardMatchInfo: P.number,
+  setEndGame: P.func,
 }

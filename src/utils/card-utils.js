@@ -37,35 +37,51 @@ export const levelChoose = (
   setNonGame,
   setCardMatch,
   levelEndGame,
+  setEndGame,
 ) => {
   switch (level) {
     case 'easy': {
       console.log('Easy level selected!')
+      levelEndGame.current == true
+      setEndGame(false)
       setCardMatch(0)
       setLevelTime(30)
       setNonGame(false)
       setTimeout(() => {
-        if (levelEndGame.current == true) setNonGame(true)
+        if (levelEndGame.current == true) {
+          setNonGame(true)
+          setEndGame(true)
+        }
       }, 30000)
       break
     }
     case 'medium': {
       console.log('Medium level selected!')
+      levelEndGame.current == true
+      setEndGame(false)
       setCardMatch(0)
       setLevelTime(60)
       setNonGame(false)
       setTimeout(() => {
-        if (levelEndGame.current == true) setNonGame(true)
+        if (levelEndGame.current == true) {
+          setNonGame(true)
+          setEndGame(true)
+        }
       }, 60000)
       break
     }
     case 'hard': {
       console.log('HARD level selected!')
+      levelEndGame.current == true
+      setEndGame(false)
       setCardMatch(0)
       setLevelTime(120)
       setNonGame(false)
       setTimeout(() => {
-        if (levelEndGame.current == true) setNonGame(true)
+        if (levelEndGame.current == true) {
+          setNonGame(true)
+          setEndGame(true)
+        }
       }, 120000)
     }
   }
@@ -81,6 +97,7 @@ export const endGame = (
   easyEndGame,
   mediumEndGame,
   hardEndGame,
+  setEndGame,
 ) => {
   switch (level) {
     case 'easy': {
@@ -89,6 +106,7 @@ export const endGame = (
           setNonGame(true)
           easyEndGame.current = false
           setIsWinner(true)
+          setEndGame(true)
         }, 900)
       }
       break
@@ -99,6 +117,7 @@ export const endGame = (
           setNonGame(true)
           mediumEndGame.current = false
           setIsWinner(true)
+          setEndGame(true)
         }, 900)
       }
       break
@@ -109,6 +128,7 @@ export const endGame = (
           setNonGame(true)
           hardEndGame.current = false
           setIsWinner(true)
+          setEndGame(true)
         }, 900)
       }
       break

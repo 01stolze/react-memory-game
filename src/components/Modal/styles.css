@@ -1,0 +1,43 @@
+.modal-content {
+    text-align: center;
+}
+
+
+.modal-overlay {
+    background: #bb3e3e;
+    opacity: 0.8;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.modal-content {
+    color: white;
+    font-size: 5vw;
+}
+
+.modal-content button {
+    border: 0;
+    border-radius: 5px;
+    font-size: large;
+    color: green;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bolder;
+}
+
+.modal-content button:hover {
+    color: white;
+    background-color: green;
+    transition: 0.3s;
+}

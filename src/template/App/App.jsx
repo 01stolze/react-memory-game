@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { Info } from '../../components/Info'
 import { Start } from '../../components/Start'
 import { Grid } from '../../components/Grid'
+import { ModalPop } from '../../components/Modal'
 import {
   cardsDataEasy,
   cardsDataHard,
@@ -11,6 +12,7 @@ import {
 
 function App() {
   const [nonGame, setNonGame] = useState(true)
+  const [endGame, setEndGame] = useState(false)
   const [levelTime, setLevelTime] = useState(0)
   const [cardFlips, setCardFlips] = useState(0)
   const [cardMatchInfo, setCardMatchInfo] = useState(0)
@@ -35,6 +37,7 @@ function App() {
               easyEndGame={easyEndGame}
               mediumEndGame={mediumEndGame}
               hardEndGame={hardEndGame}
+              setEndGame={setEndGame}
             />
             <Info
               isWinner={isWinner}
@@ -60,6 +63,14 @@ function App() {
           hardEndGame={hardEndGame}
           cardMatchInfo={cardMatchInfo}
           setCardMatchInfo={setCardMatchInfo}
+          setEndGame={setEndGame}
+        />
+      )}
+      {endGame && (
+        <ModalPop
+          isWinner={isWinner}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
       )}
     </div>

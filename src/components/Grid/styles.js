@@ -18,5 +18,6 @@ export const GridDiv = styled.div`
       }
     }};
     height: 99vh;
+    width: 100vw;
     gap: 0.2rem;
 `
