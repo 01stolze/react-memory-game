@@ -22,7 +22,15 @@ export const ModalPop = ({ setEndGame, isWinner }) => {
         overlayClassName="modal-overlay"
         className="modal-content"
       >
-        <h1>{isWinner ? 'PARABÉNS!!' : 'QUE PENA!'}</h1>
+        {isWinner ? (
+          <>
+            <h1>PARABÉNS!</h1> <p>Você ganhou!</p>
+          </>
+        ) : (
+          <>
+            <h1>Que pena!</h1> <p>Acabou seu tempo!</p>
+          </>
+        )}
         <button onClick={closeModal}>OK</button>
       </Modal>
     </div>
