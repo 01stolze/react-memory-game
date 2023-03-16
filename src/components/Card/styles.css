@@ -37,3 +37,14 @@
     transform: rotateY(180deg);
 }
 
+.card-face--back:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    .card-face {
+        font-size: 40px;
+    }
+}
+
